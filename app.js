@@ -2,13 +2,13 @@ const refs = {
   form: document.querySelector('.feedback-form'),
 
   name: document.querySelector('#userName'),
-  phone: document.querySelector('#userNumber'),
+  tel: document.querySelector('#userNumber'),
   email: document.querySelector('#userEmail'),
 
   textarea: document.querySelector('.feedback-form textarea'),
 };
-const STORAGE_KEY = 'feedback-form-state';
 
+const STORAGE_KEY = 'feedback-form-state';
 let formData = {};
 // слухачі
 refs.form.addEventListener('submit', onFormSubmit);
@@ -22,6 +22,21 @@ function onFormSubmit(evt) {
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
+
+  // Get form data
+  var formData = new FormData(this);
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'send_message.php', true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // Success, do something here if needed
+      console.log('Message sent successfully');
+    } else {
+      // Error handling
+      console.error('Error:', xhr.statusText);
+    }
+  };
+  xhr.send(formData);
 }
 // функція запису localStorage, щоб під час перезагрузки браузера не пропадав техт textarea
 function onTextareaInput(evt) {
@@ -39,8 +54,8 @@ function populateTextarea() {
     if (savedMessage['name']) {
       refs.name.value = savedMessage['name'];
     }
-    if (savedMessage['phone']) {
-      refs.phone.value = savedMessage['phone'];
+    if (savedMessage['tel']) {
+      refs.tel.value = savedMessage['tel'];
     }
     if (savedMessage['email']) {
       refs.email.value = savedMessage['email'];
@@ -50,3 +65,7 @@ function populateTextarea() {
     }
   }
 }
+
+// // Зняти слухача подій з форми
+// refs.form.removeEventListener('submit', onFormSubmit);
+// refs.form.removeEventListener('input', onTextareaInput);

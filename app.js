@@ -1,6 +1,10 @@
 const refs = {
   form: document.querySelector('.feedback-form'),
-  input: document.querySelector('.feedback-form input'),
+
+  name: document.querySelector('#userName'),
+  phone: document.querySelector('#userNumber'),
+  email: document.querySelector('#userEmail'),
+
   textarea: document.querySelector('.feedback-form textarea'),
 };
 const STORAGE_KEY = 'feedback-form-state';
@@ -23,17 +27,26 @@ function onFormSubmit(evt) {
 function onTextareaInput(evt) {
   // const message = evt.target.value;
   formData[evt.target.name] = evt.target.value;
+  //   console.log(evt.target.value);
   //   console.log(formData);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 // функція отримуємо дані сховища, якщо(if) - в DOM
 function populateTextarea() {
-  const savedMassege = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  //   console.log(savedMassege);
-  if (savedMassege) {
-    refs.input.value = savedMassege[`name`];
-    refs.input.value = savedMassege[`phone`];
-    refs.input.value = savedMassege[`email`];
-    refs.textarea.value = savedMassege[`message`];
+  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+  if (savedMessage) {
+    if (savedMessage['name']) {
+      refs.name.value = savedMessage['name'];
+    }
+    if (savedMessage['phone']) {
+      refs.phone.value = savedMessage['phone'];
+    }
+    if (savedMessage['email']) {
+      refs.email.value = savedMessage['email'];
+    }
+    if (savedMessage['message']) {
+      refs.textarea.value = savedMessage['message'];
+    }
   }
 }

@@ -9,28 +9,28 @@
   <body>
     <div class="conteiner">
       <h1>Give your Feedback</h1>
-      <form class="feedback-form">
-        <label>
-          Name
+      <form id="contactForm" class="feedback-form" action="send.php" method="POST">
+        <label for="name">
+          Name:
           <input
             id="userName"
-            type="name"
+            type="text"
             name="name"
             placeholder="Enter name..."
             autofocus
             required
           />
         </label>
-        <label>
-          Phone number
+        <label for="tel">
+          Phone number:
           <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." required />
         </label>
-        <label>
-          Email
+        <label for="email">
+          Email:
           <input id="userEmail" type="email" name="email" placeholder="Enter email ..." required />
         </label>
         <label>
-          Message
+          Message:
           <textarea
             name="message"
             rows="8"

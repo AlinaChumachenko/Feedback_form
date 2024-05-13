@@ -1,7 +1,7 @@
 <?php
 // Telegram bot API token and chat ID
-$token = '6459998261:AAF5gYc3cD3j5qC2YM6LcFMlgcpGMUxj8Iw';
-$chat_id = '-4289895385';
+$token = '7027107110:AAF0XiXPierq6lNQEv-bJ3xdAygAtXTD5Bc';
+$chat_id = '-4289895386';
 
 // Get form data
 $name = $_POST['name'];

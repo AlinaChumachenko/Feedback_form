@@ -7,6 +7,36 @@
     <title>Feedback form</title>
   </head>
   <body>
+    <form class="login-form">
+      <label>
+        Name
+        <input type="name" name="name" placeholder="Enter name..." autofocus required />
+      </label>
+      <label>
+        Phone number
+        <input type="tel" name="phone" placeholder="Enter number..." required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" placeholder="Enter email ..." required />
+      </label>
+      <label>
+        Message
+        <textarea
+          name="message"
+          rows="8"
+          placeholder="Enter you message here..."
+          required
+        ></textarea>
+      </label>
+      <label>
+        <input type="checkbox" name="policy" value="policy" />
+        Даю згоду на обробку персональних данних
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
+
     <script src="./app.js"></script>
   </body>
 </html>

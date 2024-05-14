@@ -1,23 +1,104 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  outline: none;
-}
-
 body {
+  font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 50vh;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: url(./img/smoke01.jpg);
+  /* background: url(./img/pink.jpg); */
+  /* background: url(./img/black-white-waves.jpg); */
+  /* background: url(./img/4963107.jpg); */
+  /* background: url(./img/smokey_atmosphere_background_2307.jpg); */
 }
 
-/* .feedback-form {
-  display: flex;
-  flex-direction: column;
-} */
-.conteiner {
+code {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Menlo', 'Monaco',
+    'Consolas', 'Courier New', monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+  display: grid;
+  gap: 30px;
+}
+
+.feedback-form label {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 5px;
+}
+
+.feedback-form label input,
+.feedback-form label textarea {
+  /* width: 100%; */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.feedback-form label input[type='checkbox'] {
+  width: auto;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 700;
   text-align: center;
-  flex-direction: column;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.text {
+  color: #ccc;
+}
+
+s .feedback-form {
+  opacity: 0; /* начальное значение непрозрачности */
+  animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+  animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+  animation-duration: 2s; /* длительность анимации в 1 секунду */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

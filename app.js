@@ -12,14 +12,14 @@ const STORAGE_KEY = 'feedback-form-state';
 let formData = {};
 
 refs.form.addEventListener('submit', onFormSubmit);
-// refs.form.addEventListener('input', onTextareaInput);
+refs.form.addEventListener('input', onTextareaInput);
 
 populateTextarea();
 
 function onFormSubmit(evt) {
   evt.preventDefault();
 
-  // localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_KEY);
 
   var formData = new FormData(refs.form);
 
@@ -64,6 +64,5 @@ function populateTextarea() {
   }
 }
 
-// // Зняти слухача подій з форми
-// refs.form.removeEventListener('submit', onFormSubmit);
-// refs.form.removeEventListener('input', onTextareaInput);
+refs.form.removeEventListener('submit', onFormSubmit);
+refs.form.removeEventListener('input', onTextareaInput);

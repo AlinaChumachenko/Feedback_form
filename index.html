@@ -8,42 +8,30 @@
   </head>
   <body>
     <div class="conteiner">
-      <h1>Give your Feedback</h1>
+      <h1 class="title">Give your Feedback</h1>
       <form id="contactForm" class="feedback-form" action="send_message.php" method="POST">
-        <label for="name">
+        <label class="text" for="name">
           Name:
-          <input
-            id="userName"
-            type="text"
-            name="name"
-            placeholder="Enter name..."
-            autofocus
-            required
-          />
+          <input id="userName" type="text" name="name" placeholder="Enter name..." autofocus />
         </label>
-        <label for="tel">
+        <label class="text" for="tel">
           Phone number:
-          <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." required />
+          <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." />
         </label>
-        <label for="email">
+        <label class="text" for="email">
           Email:
-          <input id="userEmail" type="email" name="email" placeholder="Enter email ..." required />
+          <input id="userEmail" type="email" name="email" placeholder="Enter email ..." />
         </label>
-        <label>
+        <label class="text" for="message">
           Message:
-          <textarea
-            name="message"
-            rows="8"
-            placeholder="Enter you message here..."
-            required
-          ></textarea>
+          <textarea name="message" rows="8" placeholder="Enter you message here..."></textarea>
         </label>
-        <label>
+        <label class="text">
           <input type="checkbox" name="consent" value="consent" />
           I agree to the processing of personal data
         </label>
 
-        <button type="submit">Send</button>
+        <button class="button text-button" type="submit">Send</button>
       </form>
     </div>
 

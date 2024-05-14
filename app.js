@@ -10,21 +10,19 @@ const refs = {
 
 const STORAGE_KEY = 'feedback-form-state';
 let formData = {};
-// слухачі
+
 refs.form.addEventListener('submit', onFormSubmit);
-refs.form.addEventListener('input', onTextareaInput);
-// виклик функції
+// refs.form.addEventListener('input', onTextareaInput);
+
 populateTextarea();
 
-// функція відправки форми
 function onFormSubmit(evt) {
-  // console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   evt.preventDefault();
-  evt.currentTarget.reset();
-  localStorage.removeItem(STORAGE_KEY);
 
-  // Get form data
-  var formData = new FormData(this);
+  // localStorage.removeItem(STORAGE_KEY);
+
+  var formData = new FormData(refs.form);
+
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'send_message.php', true);
   xhr.onload = function () {
@@ -37,16 +35,16 @@ function onFormSubmit(evt) {
     }
   };
   xhr.send(formData);
+
+  evt.currentTarget.reset();
 }
-// функція запису localStorage, щоб під час перезагрузки браузера не пропадав техт textarea
+
 function onTextareaInput(evt) {
-  // const message = evt.target.value;
   formData[evt.target.name] = evt.target.value;
-  //   console.log(evt.target.value);
-  //   console.log(formData);
+
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
-// функція отримуємо дані сховища, якщо(if) - в DOM
+
 function populateTextarea() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 

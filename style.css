@@ -87,11 +87,12 @@ p {
   color: #ccc;
 }
 
-s .feedback-form {
+.feedback-form,
+.title {
   opacity: 0; /* начальное значение непрозрачности */
   animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
   animation-fill-mode: forwards; /* будет видимым после завершения анимации */
-  animation-duration: 2s; /* длительность анимации в 1 секунду */
+  animation-duration: 3s; /* длительность анимации в 3 секунду */
 }
 
 @keyframes fadeIn {

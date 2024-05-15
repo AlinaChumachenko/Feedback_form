@@ -11,25 +11,25 @@
       <h1 class="title">Give your Feedback</h1>
       <form id="contactForm" class="feedback-form" action="send_message.php" method="POST">
         <label class="text" for="name">
-          Name:
+          Name * :
           <input
             id="userName"
             type="text"
             name="name"
             placeholder="Enter name..."
-            pattern="[a-zA-Zа-яА-Я\s-]+"
+            pattern="[^\d]+"
             title="Name may contain only letters, apostrophe, dash and spaces."
             required
             autofocus
           />
         </label>
         <label class="text" for="tel">
-          Phone number:
+          Phone number * :
           <input
             id="userNumber"
             type="tel"
             name="tel"
-            placeholder="Enter number +XX-XXX-XXXX-XXXX:"
+            placeholder="Enter number..."
             pattern="\+?[0-9\s\-()+]+"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -42,7 +42,7 @@
             type="email"
             name="email"
             placeholder="Enter email ..."
-            pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
+            pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
             title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix."
           />
         </label>

@@ -83,6 +83,11 @@ p {
   color: #ccc;
 }
 
+.button.active {
+  /* background-color: rgb(46, 177, 46); */
+  border: 5px solid #3760f3;
+}
+
 .feedback-form,
 .title {
   opacity: 0; /* начальное значение непрозрачности */

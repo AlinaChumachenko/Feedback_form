@@ -67,8 +67,9 @@ function populateTextarea() {
 
 function onLicenseChange(evt) {
   refs.button.disabled = !evt.currentTarget.checked;
+  refs.button.classList.toggle('active', evt.currentTarget.checked);
 }
 
 refs.form.removeEventListener('submit', onFormSubmit);
 refs.form.removeEventListener('input', onTextareaInput);
-refs.checkbox.removeEventListener('change', onLicenseChange);
+// refs.checkbox.removeEventListener('change', onLicenseChange);

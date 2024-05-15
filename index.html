@@ -17,7 +17,7 @@
             type="text"
             name="name"
             placeholder="Enter name..."
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            pattern="[a-zA-Zа-яА-Я\s-]+"
             title="Name may contain only letters, apostrophe, dash and spaces."
             required
             autofocus
@@ -29,8 +29,8 @@
             id="userNumber"
             type="tel"
             name="tel"
-            placeholder="Enter number..."
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            placeholder="Enter number +XX-XXX-XXXX-XXXX:"
+            pattern="\+\d{2}-\d{3}-\d{4}-\d{4}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />

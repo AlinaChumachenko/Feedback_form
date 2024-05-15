@@ -71,3 +71,4 @@ function onLicenseChange(evt) {
 
 refs.form.removeEventListener('submit', onFormSubmit);
 refs.form.removeEventListener('input', onTextareaInput);
+refs.checkbox.removeEventListener('change', onLicenseChange);

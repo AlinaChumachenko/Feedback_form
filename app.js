@@ -1,11 +1,11 @@
 const refs = {
   form: document.querySelector('.feedback-form'),
-
   name: document.querySelector('#userName'),
   tel: document.querySelector('#userNumber'),
   email: document.querySelector('#userEmail'),
-
   textarea: document.querySelector('.feedback-form textarea'),
+  button: document.querySelector('.feedback-form button'),
+  checkbox: document.querySelector('#check'),
 };
 
 const STORAGE_KEY = 'feedback-form-state';
@@ -13,6 +13,7 @@ let formData = {};
 
 refs.form.addEventListener('submit', onFormSubmit);
 refs.form.addEventListener('input', onTextareaInput);
+refs.checkbox.addEventListener('change', onLicenseChange);
 
 populateTextarea();
 
@@ -62,6 +63,10 @@ function populateTextarea() {
       refs.textarea.value = savedMessage['message'];
     }
   }
+}
+
+function onLicenseChange(evt) {
+  refs.button.disabled = !evt.currentTarget.checked;
 }
 
 refs.form.removeEventListener('submit', onFormSubmit);

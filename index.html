@@ -12,11 +12,18 @@
       <form id="contactForm" class="feedback-form" action="send_message.php" method="POST">
         <label class="text" for="name">
           Name:
-          <input id="userName" type="text" name="name" placeholder="Enter name..." autofocus />
+          <input
+            id="userName"
+            type="text"
+            name="name"
+            placeholder="Enter name..."
+            required
+            autofocus
+          />
         </label>
         <label class="text" for="tel">
           Phone number:
-          <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." />
+          <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." required />
         </label>
         <label class="text" for="email">
           Email:

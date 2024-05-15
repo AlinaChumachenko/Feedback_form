@@ -17,17 +17,34 @@
             type="text"
             name="name"
             placeholder="Enter name..."
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces."
             required
             autofocus
           />
         </label>
         <label class="text" for="tel">
           Phone number:
-          <input id="userNumber" type="tel" name="tel" placeholder="Enter number..." required />
+          <input
+            id="userNumber"
+            type="tel"
+            name="tel"
+            placeholder="Enter number..."
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+          />
         </label>
         <label class="text" for="email">
           Email:
-          <input id="userEmail" type="email" name="email" placeholder="Enter email ..." />
+          <input
+            id="userEmail"
+            type="email"
+            name="email"
+            placeholder="Enter email ..."
+            pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
+            title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix."
+          />
         </label>
         <label class="text" for="message">
           Message:

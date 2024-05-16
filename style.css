@@ -84,7 +84,6 @@ p {
 }
 
 .button.active {
-  /* background-color: rgb(46, 177, 46); */
   border: 5px solid #3760f3;
 }
 
